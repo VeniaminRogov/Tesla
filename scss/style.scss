@@ -1,0 +1,379 @@
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+body {
+  background-color: #0b0b0b;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 24px;
+  line-height: 28px;
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 400;
+}
+
+.header {
+  height: 100vh;
+
+  position: absolute;
+  z-index: 5;
+  background: rgba(0, 0, 0, 0.3);
+  left: 0;
+  right: 0;
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__btn {
+    width: 60px;
+    height: 60px;
+    border: 1px solid #ffffff;
+    margin-top: 31px;
+    background: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    & div {
+      width: 36px;
+      height: 2px;
+      background-color: #fff;
+      margin: 5px 0;
+    }
+  }
+
+  &__content {
+    &-title {
+      font-family: "Roboto", sans-serif;
+      font-size: 96px;
+      line-height: 112px;
+      margin-bottom: 40px;
+    }
+
+    &-text {
+      width: 284px;
+      margin-bottom: 25px;
+    }
+  }
+}
+
+.button {
+  padding: 30px 62px;
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.15);
+  transition: all 0.5s;
+  border: 1px solid #ffffff;
+
+  &:hover {
+    background-color: #770302;
+  }
+}
+
+.logo {
+  padding-top: 36px;
+  margin-bottom: 29px;
+}
+
+.container {
+  padding: 0 15px;
+  max-width: 1230px;
+  margin: 0 auto;
+
+  &-menu {
+    position: relative;
+  }
+}
+
+.menu {
+  background-color: #000000;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  transition: all 0.5s;
+  z-index: 7;
+
+  &.active {
+    left: 0;
+  }
+
+  &__list {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+
+    & ul {
+      list-style: none;
+    }
+
+    & a {
+      font-weight: bold;
+      font-size: 48px;
+      line-height: 56px;
+      color: #ffffff;
+      padding: 30px 25px 14px 0;
+      border-bottom: 3px solid #b70021;
+      display: inline-block;
+      min-width: 368px;
+      transition: all 0.5s;
+
+      &:hover {
+        border-color: #ffffff;
+        color: #b70021;
+        transform: scale(1.2);
+        margin: 37px;
+      }
+    }
+  }
+}
+
+.close-btn {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 31px;
+  right: 0;
+  cursor: pointer;
+  right: 15px;
+
+  &::after,
+  &::before {
+    position: absolute;
+    content: "";
+    width: 70px;
+    height: 2px;
+    background-color: #fff;
+    transform-origin: left;
+  }
+
+  &::after {
+    transform: rotate(45deg);
+  }
+  &::before {
+    transform: rotate(-45deg);
+    bottom: -1px;
+  }
+}
+
+.slider {
+  &__item {
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  & {
+    .slick {
+      &-dots {
+        margin: -55px auto 0;
+        position: relative;
+        z-index: 6;
+        max-width: 1230px;
+        padding: 0 15px;
+      }
+      &-dots button {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: #0b0b0b;
+        border: none;
+        padding: 0;
+        font-size: 0;
+        cursor: pointer;
+        outline: none;
+      }
+
+      &-active button {
+        background-color: #fff;
+      }
+      &-dots li {
+        display: inline-block;
+        margin: 0 5px;
+      }
+    }
+  }
+}
+
+.statistics {
+  margin: 160px 0 100px;
+  &__items {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+  }
+  &__item {
+    &-title {
+      margin-bottom: 19px;
+    }
+
+    &-plus span {
+      display: inline-block;
+      position: relative;
+
+      &:before {
+        content: "+";
+        position: absolute;
+        width: 24px;
+        height: 28px;
+        top: -65px;
+      }
+    }
+
+    &-num {
+      font-family: Roboto;
+      font-size: 96px;
+      line-height: 112px;
+      margin-bottom: 7px;
+      span {
+        font-family: Roboto Condensed;
+        font-size: 24px;
+        line-height: 28px;
+        margin-left: -20px;
+      }
+    }
+    &-descr {
+      color: #b70021;
+    }
+  }
+}
+
+.video {
+  margin-bottom: 100px;
+  img {
+    margin: 0 auto;
+  }
+}
+
+.advantages {
+  &-row {
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+
+  &-descr {
+    max-width: 570px;
+    width: 100%;
+  }
+
+  &-title {
+    position: absolute;
+    top: 0;
+    font-size: 36px;
+    line-height: 42px;
+    color: #b70021;
+    &-bottom {
+      right: 0;
+      bottom: 0;
+      top: auto;
+    }
+  }
+
+  &-text {
+    width: 303px;
+    & ul {
+      list-style: none;
+      left: 0;
+    }
+  }
+}
+
+.design {
+  &__img {
+    margin-bottom: 100px;
+  }
+
+  &-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 100px;
+
+    &__item {
+      max-width: 570px;
+      width: 100%;
+      padding-right: 15px;
+      display: flex;
+      justify-content: space-between;
+
+      &-num {
+        color: #b70021;
+      }
+
+      &-text {
+        max-width: 430px;
+        padding-top: 25px;
+      }
+    }
+  }
+}
+
+.footer {
+  background-color: #690102;
+  padding: 83px 0 20px;
+
+  &-btn {
+    text-align: center;
+    margin-bottom: 23px;
+    margin-bottom: 83px;
+  }
+
+  &-copy {
+    text-align: center;
+    font-weight: 700;
+
+    & ul {
+      list-style: none;
+    }
+    & li {
+      display: inline-block;
+      padding: 0 10px;
+      position: relative;
+
+      & + li::before {
+        content: "|";
+        position: absolute;
+        left: -5px;
+      }
+    }
+  }
+}
+
+@media (max-width: 410px) {
+  .logo img {
+    width: 200px;
+  }
+
+  .header__content-title {
+    font-size: 70px;
+    margin-top: 25px;
+    line-height: 85px;
+  }
+
+  .menu__list a {
+    font-size: 30px;
+    line-height: 44px;
+    display: block;
+    min-width: 100%;
+  }
+
+  .menu__list ul{
+    width: 100%;
+  }
+
+  .slick-dots{
+    padding-top: 15px;
+  }
+}
